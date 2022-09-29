@@ -9,6 +9,10 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+
+    // Add support for assembling web application WAR files.
+    // https://docs.gradle.org/current/userguide/war_plugin.html
+    id 'war'
 }
 
 mainClassName = 'Main'
