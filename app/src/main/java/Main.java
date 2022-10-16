@@ -31,6 +31,23 @@ public class Main {
     Module m8 = new Module("Power Systems", "EE450", l2);
     Module m9 = new Module("Object-Oriented Programming", "CT2106", l3);
 
+    // Add modules to lecturers.
+    l1.addModule(m1);
+    l1.addModule(m4);
+    l1.addModule(m7);
+    l2.addModule(m2);
+    l2.addModule(m5);
+    l2.addModule(m8);
+    l3.addModule(m3);
+    l3.addModule(m6);
+    l3.addModule(m9);
+
+    // Create lecturer list.
+    ArrayList<Lecturer> lecturers = new ArrayList<>();
+    lecturers.add(l1);
+    lecturers.add(l2);
+    lecturers.add(l3);
+
     // Create mock courses.
     CourseProgramme c1 = new CourseProgramme("Bachelor and Master of Engineering (Energy Systems)", DateTime.parse("2022-09-01"), DateTime.parse("2023-05-01"));
     CourseProgramme c2 = new CourseProgramme("BComm in International Hotel Management", DateTime.parse("2022-10-01"), DateTime.parse("2023-04-01"));
@@ -47,16 +64,19 @@ public class Main {
     s1.addModule(m7);
     s1.addModule(m8);
     s1.addModule(m9);
+    c1.addStudent(s1);
 
     s2.addCourse(c2);
     s2.addModule(m4);
     s2.addModule(m5);
     s2.addModule(m6);
+    c2.addStudent(s2);
 
     s3.addCourse(c3);
     s3.addModule(m1);
     s3.addModule(m2);
     s3.addModule(m3);
+    c3.addStudent(s3);
 
     // Add modules to courses.
     c1.addModule(m7);
@@ -79,6 +99,12 @@ public class Main {
     System.out.println("\n======================= Courses =======================\n");
     for (CourseProgramme c : courseProgrammes) {
       System.out.println(c.toString());
+    }
+
+    // Print lecturers
+    System.out.println("\n======================= Lecturers =======================\n");
+    for (Lecturer l : lecturers) {
+      System.out.println(l.toString());
     }
   }
 }
